@@ -1,252 +1,170 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E RESET
+   ========================================== */
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Garante que padding não quebre larguras */
+    box-sizing: border-box;
 }
-body {
-    /* Gradiente sutil claro (opcional) sobre a imagem de fundo */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-                      url('taxas.jpg');
 
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('taxas.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
-    /* Define o fundo como branco caso a imagem falhe */
     background-color: #ffffff; 
-    
     font-family: Arial, sans-serif;
-    
-    /* IMPORTANTE: Cor do texto escura para dar contraste sobre o fundo branco */
     color: #1a1a1a; 
-    
     min-height: 100vh; 
     margin: 0; 
 }
 
-
-/* Garante que a barra alinhe os elementos em linha começando da esquerda */
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alinha os blocos em sequência */
-    gap: 20px; /* Cria um espaço uniforme entre o ícone, o logo e a busca */
-    padding: 15px 30px;
-    background-color: #ffffff; /* Fundo branco conforme sua escolha anterior */
-    border-bottom: 1px solid #e0e0e0;
-}
-
-/* Estilização do Ícone do Menu */
-.menu-icon-toggle {
-    font-size: 28px; /* Deixa o ícone grande e visível */
-    color: #1a1a1a; /* Cor escura para destacar no fundo branco */
-    cursor: pointer;
-    padding: 5px;
-    transition: color 0.2s ease;
-}
-
-/* Efeito ao passar o mouse no ícone */
-.menu-icon-toggle:hover {
-    color: #00bcd4; /* Muda de cor ao passar o mouse */
-}
-
-/* Garante que a lista de links da direita fique empurrada para o final */
-.inicio {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin-left: auto; /* Esse comando empurra o menu de links para a extrema direita */
-    padding: 0;
-}
-
-.inicio a {
-    color: #1a1a1a; /* Texto escuro para o fundo branco */
-    text-decoration: none;
-}
-
-
-/* Corrigido: sem espaço, pois a classe está na própria tag <nav> */
+/* ==========================================
+   TOPO E ESTRUTURA DE NAVEGAÇÃO (NAV/MENU)
+   ========================================== */
 nav.main {
     width: 100%;
-    /* Corrigido: sintaxe do gradiente + imagem de fundo */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('img/fundo.jpg');
-    background-position: center;
-    background-size: cover;
-     align-items: center;
-    height: 10vh; /* Ajustado de 109vh para 100vh para cobrir a tela sem barra de rolagem */
+    background: #333; /* Fundo escuro unificado para consistência */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    height: 70px;
+    position: relative;
+    z-index: 1000;
 }
 
 .menu {
-    width: 100%; /* Mudado de 700px para 100% para ocupar o topo inteiro */
-    height: 70px;
     display: flex;
-    background-color: #333;
-     margin: 0 auto;
-     padding: 60px;
+    align-items: center;
 }
 
 .menu ul {
     display: flex;           
-    justify-content: flex-start; /* Alinha os itens no começo */
     align-items: center;  
-    height: 100%;
-    width: 100%;
     gap: 25px; 
-    padding: 0 20px;
     list-style: none;
-}
-
-.menu ul li {
-    margin-left: 30px; /* Reduzido para um espaçamento mais limpo */
-    font-size: 14px;
+    padding: 0;
+    margin: 0;
 }
 
 .menu ul li a {
     text-decoration: none;
     color: #fff;
-    border-bottom: 3px solid transparent; /* Corrigido: 'bottom' */
-    font-family: Arial, sans-serif;
+    border-bottom: 3px solid transparent;
     font-weight: bold;
     transition: 0.4s ease-in-out;
     padding-bottom: 5px;
+    font-size: 14px;
 }
 
 .menu ul li a:hover {
-    border-bottom: 3px solid #fff; /* Efeito visual ao passar o mouse */
+    border-bottom: 3px solid #fff;
 }
 
+/* ==========================================
+   SISTEMA DE MENU DROPDOWN (CORRIGIDO)
+   ========================================== */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-icon-toggle {
+    font-size: 30px;
+    color: #fff; /* Ícone branco para contrastar no menu escuro */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.menu-icon-toggle:hover {
+    color: #00bcd4;
+}
+
+/* Lista do menu oculta por padrão */
+.dropdown-paginas {
+    display: none; 
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    z-index: 9999;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* CLASSE ATIVADA PELO JAVASCRIPT (Faz o dropdown aparecer) */
+.dropdown-paginas.active,
+.dropdown-paginas.show {
+    display: block !important;
+}
+
+.dropdown-paginas li {
+    width: 100%;
+}
+
+.dropdown-paginas li a {
+    color: #1a1a1a;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    transition: background 0.2s;
+}
+
+.dropdown-paginas li a:hover {
+    background-color: #f5f5f5;
+    color: #00bcd4;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL E GRIDS
+   ========================================== */
 main {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.linha {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
 .container {
     display: flex;
     flex-direction: column; 
     align-items: center;    
     text-align: center;     
-    font-family: sans-serif;
 }
 
 .container h1 {
     font-size: 32px;
     color: #222;
     margin-bottom: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
-/* CONTAINER PAI (Gerencia o alinhamento dos 7 blocos) */
-.hero {
-    display: flex;
-    flex-wrap: wrap;         /* Corrigido: 'flex-wrap' com R */
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 30px auto;       /* Corrigido: adicionado o caractere ':' */
-    padding: 0 20px;
-}
-
-/* CARDS INDIVIDUAIS (Estilo comum para todos os blocos) */
-.hero-content {
-    flex: 1 1 calc(33.333% - 20px); 
-    min-width: 280px;       
-    max-width: 350px;        
-    
-    /* REMOVIDO: Tiramos a altura fixa de 300px para o bloco não ficar gigante e cinza */
-    height: auto; 
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-
-    background-color: #f4f4f4; /* Fundo cinza suave que só aparece se a foto sumir */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    
-    /* CORRIGIDO: Linha da sombra completada e bloco fechado com } */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-}
-
-/* IMAGENS DE FUNDO INDIVIDUAIS (Aplique as classes correspondentes no seu HTML) */
-.bg-gerdau {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/gerdau.jfif');
-}
-
-.bg-images {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/images (7).jfif');
-}
-
-/* TEXTOS E LINKS */
-.hero-link {
-    color: #fff;             /* Mudado para branco para dar leitura sobre as imagens */
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 18px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Sombra no texto para destacar no fundo */
-}
-
-/* BOTÃO (Removida a duplicidade) */
-.btn {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #555;
-}
-
-/* Se você optar por usar tags <img> em vez de fundo CSS */
-/* Isso controla a tag <img> dentro da div .hero-content */
-.hero-content img {
-    width: 100%;          /* Obriga a foto a ter a mesma largura da div */
-    height: 160px;        /* Define uma altura fixa para a foto não ocupar o card todo */
-    object-fit: cover;    /* Corta e ajusta a imagem sem deixar ela amassada ou distorcida */
-    border-radius: 6px;   /* Arredonda os cantos da imagem para combinar com o card */
-    margin-bottom: 10px;  /* Empurra o texto e o botão um pouco para baixo */
-}
-footer {
-    background-color: #333;   /* Fundo escuro para combinar com o menu */
-    padding: 20px;            /* Espaço interno para o rodapé não ficar esmagado */
-    text-align: center;       /* Centraliza os links na tela */
-    display: flex;            /* Ativa o Flexbox para alinhar os links */
-    justify-content: center;  /* Centraliza os links horizontalmente */
-    gap: 30px;                /* Cria um espaço de 30px entre um link e outro */
-    width: 100%;
-    margin-top: 50px;         /* Afasta o rodapé dos 7 blocos de cima */
-}
-
-footer a {
-    color: #bbb;              /* Cor cinza claro para os links */
-    text-decoration: none;    /* Remove o sublinhado padrão dos links */
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
-}
-
-footer a:hover {
-    color: #fff;              /* O link fica aceso (branco) quando passa o mouse */
-    text-decoration: underline; /* Adiciona o sublinhado apenas no hover (opcional) */
-}
-
-/* Container Geral da Seção */
+/* ==========================================
+   SEÇÃO FACILITIES (3 CARDS SUPERIORES)
+   ========================================== */
 .facilities {
     width: 100%;
     text-align: center;
-    padding-top: 60px;
     font-family: Arial, sans-serif;
 }
 
@@ -255,309 +173,284 @@ footer a:hover {
     margin-bottom: 10px;
 }
 
-.facilities > p {
+.facilities p {
     color: #666;
-    margin-bottom: 40px;
 }
 
-/* NOVO: Container que guarda apenas as 3 caixas menores */
-/* NOVO: Container que guarda apenas as 3 caixas menores */
 .faci-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    width: 70%; 
-    margin: 0 auto;
-    
-    /* ADICIONADO: Empurra os cards para baixo, criando o espaço para eles entrarem */
+    gap: 30px;
+    width: 100%; 
     margin-top: 30px; 
 }
 
-
-/* AS 3 DIVS MENORES */
 .newfaci {
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: 240px; 
-    min-width: 200px;
-    min-height: 320px; /* ADICIONADO: Define uma altura mínima maior para as caixas */
-    
-    display: flex; /* Alinha o conteúdo interno verticalmente */
-    flex-direction: column;
-    justify-content: space-between; /* Distribui imagem, título e texto de forma elegante */
-    gap: 40px;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
+    flex: 1 1 280px;
+    max-width: 350px; 
+    min-width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px; /* Aumentado o espaçamento interno */
-    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-/* AJUSTE DAS IMAGENS DENTRO DELAS */
+
 .newfaci img {
     width: 100%;
-    height: 170px; /* Altura controlada para não quebrar o tamanho da div */
-    object-fit: cover; /* Faz a foto se ajustar sem amassar */
+    height: 180px;
+    object-fit: cover;
     border-radius: 6px;
-    margin-bottom: 12px;
 }
 
 .newfaci h3 {
     font-size: 18px;
-    margin-bottom: 8px;
     color: #333;
-}
-
-.newfaci p {
-    font-size: 14px;
-    color: #555;
-}
-/* CONTAINER PAI (Alinha os 4 blocos na tela) */
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* ENVELOPE DO CARD */
-.content-wrapper {
-    flex: 1 1 calc(25% - 20px); /* Divide o espaço igualmente para até 4 colunas */
-    min-width: 230px;           /* Impede que fiquem esmagados em telas menores */
-    max-width: 280px;
-}
-
-/* CAIXA DO CARD INDIVIDUAL */
-.card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    
-    overflow: hidden; /* Importante: corta a imagem quando ela crescer no zoom */
-    
-    /* Cria uma transição suave para as mudanças do card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-/* CONTAINER DA IMAGEM */
-.card-image-wrapper {
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-}
-
-/* TAG IMAGEM DENTRO DA DIV */
-.card-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    
-    /* Configura a suavidade da animação do zoom da foto */
-    transition: transform 0.4s ease-in-out; 
-}
-
-/* TEXTOS INTERNOS DO CARD */
-.card-content {
-    padding: 15px;
     text-align: left;
 }
 
-.card-description {
+.newfaci a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
     font-size: 14px;
-    color: #555;
-    line-height: 1.4;
+}
+
+.newfaci a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   SEÇÃO HERO (9 BLOCOS DE NOTÍCIAS GRANDE)
+   ========================================== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;         
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.hero-content {
+    flex: 1 1 280px; 
+    min-width: 280px;       
+    max-width: 350px;        
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+}
+
+.hero-content img {
+    width: 100%;          
+    height: 180px;        
+    object-fit: cover;    
+    border-radius: 6px;   
+}
+
+.hero-text {
     font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
 }
 
-/* ========================================================
-   EFEITOS HOVER (ANIMAÇÃO AO PASSAR O MOUSE) 
-   ======================================================== */
-
-/* Faz o card subir levemente e ganhar mais sombra */
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+/* ==========================================
+   ELEMENTOS DE INTERAÇÃO (BOTÕES)
+   ========================================== */
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+    display: inline-block;
+    margin-top: auto; /* Empurra o botão sempre para o fim do card */
 }
 
-/* Faz a imagem do bitcoin dar um zoom de 10% para dentro */
-.card:hover .card-image-wrapper img {
-    transform: scale(1.1);
+.btn:hover {
+    background-color: #00bcd4;
 }
-/* --- CONFIGURAÇÃO DA SEÇÃO DA MÚSICA POP --- */
+
+/* ==========================================
+   ESTILOS ADICIONAIS: SLIDESHOW & SEÇÃO POSTS
+   ========================================== */
 .secao-posts {
     width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
+    margin-top: 20px;
 }
 
 .secao-posts h2 {
-    font-size: 26px;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.linha {
-    width: 60px;
-    height: 4px;
-    background-color: #ffcc00; /* Cor de destaque para a linha abaixo do título */
-    margin: 0 auto 25px auto;
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* --- GRID DE CARDS ABAIXO DO SLIDESHOW --- */
-.content .seu-card-de-noticia {
-    /* Altera o tamanho base do card de 300px para 450px para deixá-lo maior */
-    flex: 1 1 450px; 
-    
-    /* Aumenta o limite máximo que o card pode esticar em telas grandes */
-    max-width: 1000px; 
-    
-    /* Aumenta o espaçamento interno do card para acompanhar o tamanho maior */
-    padding: 60px; 
-    
-    /* Propriedades visuais padrão */
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    box-sizing: border-box;
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.slide-texto {
+    color: #fff;
+    font-size: 20px;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* ==========================================
+   SEÇÃO CATEGORIAS (GRID DE MINI CARDS)
+   ========================================== */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
 }
 
 .content-wrapper {
-    /* CORRIGIDO: O '0' impede que um card sozinho estique e mude de tamanho */
-   flex: 0 1 calc(25% - 20px); 
-    min-width: 220px; /* Reduzido levemente para caber os 4 blocos em telas menores */
+    flex: 1 1 240px;
     max-width: 280px;
 }
 
-
 .card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
+    background: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-image-wrapper {
-    width: 100%;
-    height: 160px;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-image-wrapper img {
     width: 100%;
-    height: 100%;
+    height: 150px;
     object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease-in-out;
 }
 
 .card-content {
     padding: 15px;
-    text-align: left;
 }
 
 .card-description {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
     font-size: 14px;
-    color: #555;
     line-height: 1.4;
 }
 
-/* --- ANIMAÇÕES HOVER NOS CARDS --- */
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+.card-description:hover {
+    color: #00bcd4;
 }
 
-.card:hover .card-image-wrapper img {
-    transform: scale(1.1); /* Efeito zoom na imagem */
-}
-/* --- CONTAINER GERAL DO SLIDESHOW --- */
-.slideshow-container {
-    max-width: 800px;
-    width: 100%;       /* Ocupa toda a largura disponível até o limite de 800px */
-    position: relative;
-    margin: 0 auto;    /* CORRIGIDO: Força a centralização horizontal exata na página */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* O slide individual */
-.mySlides {
-    display: none;
-    position: relative;
+/* ==========================================
+   RODAPÉ (FOOTER)
+   ========================================== */
+footer {
+    background-color: #333;   
+    padding: 25px;            
+    display: flex;            
+    justify-content: center;  
+    gap: 30px;                
     width: 100%;
+    margin-top: 60px;         
 }
 
-/* AS IMAGENS DENTRO DO SLIDESHOW */
-.mySlides img {
-    display: block;    /* CORRIGIDO: Remove espaços fantasmas e centraliza o bloco */
-    width: 100%;
-    height: 450px;
-    object-fit: cover; 
-    margin: 0 auto;    /* Garante o alinhamento da imagem */
-}
-/* Container do menu */
-.menu-dropdown {
-    position: relative;
-    display: inline-block;
+footer a {
+    color: #bbb;              
+    text-decoration: none;    
+    font-size: 14px;
+    transition: color 0.3s ease; 
 }
 
-/* Ícone de três barras */
-.menu-icon-toggle {
-    font-size: 30px;
-    color: #1a1a1a; /* Cor escura para aparecer no topo do site */
-    cursor: pointer;
-    padding: 5px;
-    display: block;
-}
-
-/* Caixa do menu flutuante (Oculta por padrão) */
-.dropdown-paginas {
-    display: none; 
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    background-color: #ffffff !important; /* Força o fundo da caixinha a ser branco */
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra forte para destacar */
-    border: 1px solid #cccccc !important; /* Linha cinza ao redor da caixa */
-    border-radius: 8px;
-    padding: 10px 0;
-    margin: 5px 0 0 0;
-    list-style: none;
-    z-index: 9999 !important; /* Joga a caixa para a frente de tudo */
-}
-
-/* TEXTO DE DENTRO DA CAIXA: Força a cor escura para não ficar em branco */
-.dropdown-paginas li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    text-decoration: none !important;
-    color: #1a1a1a !important; /* COR ESCURA OBRIGATÓRIA PARA O TEXTO APARECER */
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background 0.2s;
-}
-
-/* Efeito ao passar o mouse nas opções */
-.dropdown-paginas li a:hover {
-    background-color: #f5f5f5 !important;
-    color: #00bcd4 !important; /* Texto muda para azul no hover */
-}
-
-/* CLASSE DE EXIBIÇÃO: Ativada pelo clique do JavaScript */
-.dropdown-paginas.show {
-    display: block !important; 
+footer a:hover {
+    color: #fff;              
+    text-decoration: underline; 
 }
