@@ -91,6 +91,22 @@
 </header>
 
 <main>
+
+<!-- Mudado para <form> com o ID correto que o JavaScript monitora -->
+<div class="dolar-widget" style="max-width: 300px; margin: 20px auto; padding: 15px; background: #fdfdfd; border: 1px solid #e1e1e1; border-radius: 8px; text-align: center; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+  <h4 style="margin: 0 0 10px 0; color: #555; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Cotação do Dólar Comercial</h4>
+  <div style="font-size: 2rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px;">
+    R$ <span id="dolar-valor">0.00</span>
+  </div>
+  <div id="dolar-variacao" style="font-size: 0.85rem; font-weight: 600; display: inline-block; padding: 3px 8px; border-radius: 4px;">
+    Carregando...
+  </div>
+  <div style="font-size: 0.75rem; color: #999; margin-top: 10px;">
+    Atualizado em: <span id="dolar-atualizacao">-</span>
+  </div>
+</div>
+
+
 <section class="facilities">
   <h1>Economia em primeiro</h1>
   <p>Descrição da empresa e seus serviços</p>
@@ -100,7 +116,7 @@
     
     <div class="newfaci">
       <img src="img/dinheiro.avif" alt="Imagem 1">
-      <h3>Serviço 1</h3>
+      <h3>Dólar</h3>
       <a href="dinheiro.html">Dólar em queda impulsiona moedas da América Latina; peso colombiano lidera valorização</a>
     </div>
 
@@ -112,7 +128,7 @@
 
     <div class="newfaci">
       <img src="img/vivara.avif" alt="Imagem 3">
-      <h3>Serviço 3</h3>
+      <h3>Negocios</h3>
       <a href="vivara.html">Vivara deixa de comprar ouro, usa estoque acumulado e alcança margem recorde, diz CFO</a>
     </div>
 
@@ -180,137 +196,202 @@
  
 
   <section class="secao-posts">
-  <h2>Musica Pop</h2>
-  <div class="linha"></div>
+     <section class="secao-posts">
+        <h2>Música Pop</h2>
+        <div class="linha"></div>
 
-  <!-- CONTAINER DO SLIDESHOW -->
-  
+        <!-- CONTAINER DO SLIDESHOW -->
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="img/mercado livre.jfif" alt="Ellie Goulding">
+                <a class="slide-texto" href="niahl.html">Niall Horan - novo álbum</a>
+            </div>
 
-    <div class="mySlides">
-      <img src="img/mercado livre.jfif" alt="Ellie Goulding">
-      <a class="slide-texto" href="niahl.html">Niahl Horan - novo album</a>
-    </div>
+            <div class="mySlides">
+                <img src="img/gerdau.jfif" alt="Xtina">
+                <a class="slide-texto" href="Xtina.html">Xtina</a>
+            </div>
 
-    <div class="mySlides">
-      <img src="img/gerdau.jfif" alt="Xtina">
-      <a class="slide-texto" href="Xtina.html">Xtina</a>
-    </div>
+            <div class="mySlides">
+                <img src="img/energia.avif" alt="Kim">
+                <a class="slide-texto" href="zaralarsson.html">Zara Larsson</a>
+            </div>
 
-    <div class="mySlides">
-      <img src="img/energia.avif" alt="Kim">
-      <a class="slide-texto" href="zaralarsson.html">Zara Larsson</a>
-    </div>
+            <div class="mySlides">
+                <img src="img/dinheiro.avif" alt="Sombr">
+                <a class="slide-texto" href="lagum.html">Lagum</a>
+            </div>
 
-    <div class="mySlides">
-      <img src="img/dinheiro.avif" alt="Sombr">
-      <a class="slide-texto" href="lagum.html">Lagum</a>
-    </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
 
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-  </div>
+        <!-- PONTOS INDICADORES DO SLIDESHOW -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
 
-  <!-- PONTOS INDICADORES DO SLIDESHOW -->
-  <div class="dots">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-  </div>
-</section>
-<section class="secao-posts">
- <h2>Categorias</h2>
- <div class="linha"></div>
-<!-- NOVO CONTAINER PAI: Agrupa e alinha os cards lado a lado abaixo do slideshow -->
-<div class="content">
+    <section class="secao-posts">
+        <h2>Categorias</h2>
+        <div class="linha"></div>
+        
+        <!-- CONTAINER PAI DOS CARDS -->
+        <div class="content">
 
-  <!-- CARD 2 -->
-  <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/claro.webp" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <a href="Claro-compra-provedora-de-banda-larga.html" class="card-description">Claro compra provedora de banda larga Desktop em negócio de R$ 4 bilhões</p>
-      </div>
-    </div>
-  </div>
+            <!-- CARD 1 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/claro.webp" alt="Claro">
+                    </div>
+                    <div class="card-content">
+                        <a href="Claro-compra-provedora-de-banda-larga.html" class="card-description">Claro compra provedora de banda larga Desktop em negócio de R$ 4 bilhões</a>
+                    </div>
+                </div>
+            </div>
 
-  <!-- CARD 3 -->
-  <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/dinheiro.avif" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <a href="ibovespa-fecha-em-queda.html" class="card-description">Ibovespa fecha em queda com balanços em foco; dólar cai</a>
-      </div>
-    </div>
-  </div>
- <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/area.webp" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <a href="efeito-ozempic-pode-gerar-economia.html" class="card-description">Estudo aponta que "efeito Ozempic" pode gerar economia de US$ 500 milhões para companhias aéreas</p>
-      </div>
-    </div>
-  </div>
- <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/selic.webp" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <a href="atividade-pode-abrir-espaço-pra-selic.html" class="card-description">Atividade mais fraca pode abrir espaço para Selic cair a 13,25%, diz Bradesco</a>
-      </div>
-    </div>
-  </div>
- <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/lca.webp" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <a href="fmi-sugere-gradual-de-titulos-como-lca.html" class="card-description">FMI sugere ‘eliminação gradual’ de títulos incentivados, como LCI e LCA.</a>
-      </div>
-    </div>
-  </div>
+            <!-- CARD 2 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/dinheiro.avif" alt="Ibovespa">
+                    </div>
+                    <div class="card-content">
+                        <a href="ibovespa-fecha-em-queda.html" class="card-description">Ibovespa fecha em queda com balanços em foco; dólar cai</a>
+                    </div>
+                </div>
+            </div>
 
-   <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/caixa.jfif" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <a href="caixa-deve-usar-taxa-referencial-para-corrigir-valores-apreendidos-em-investigacoes.html" class="card-description">Caixa deve usar Taxa Referencial para corrigir valores apreendidos em investigações</a>
-      </div>
-    </div>
-  </div>
+            <!-- CARD 3 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/area.webp" alt="Ozempic">
+                    </div>
+                    <div class="card-content">
+                        <a href="efeito-ozempic-pode-gerar-economia.html" class="card-description">Estudo aponta que "efeito Ozempic" pode gerar economia de US$ 500 milhões para companhias aéreas</a>
+                    </div>
+                </div>
+            </div>
 
-  <!-- CARD 4 -->
-  <div class="content-wrapper">
-    <div class="card">
-      <div class="card-image-wrapper">
-        <img src="img/bitcoin.jfif" alt="Bitcoin">
-      </div>
-      <div class="card-content">
-        <p class="card-description">Lorem ipsum dolor sit amet.</p>
-      </div>
-    </div>
-  </div>
+            <!-- CARD 4 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/selic.webp" alt="Selic">
+                    </div>
+                    <div class="card-content">
+                        <a href="atividade-pode-abrir-espaço-pra-selic.html" class="card-description">Atividade mais fraca pode abrir espaço para Selic cair a 13,25%, diz Bradesco</a>
+                    </div>
+                </div>
+            </div>
 
-</div> <!-- Fim do content -->
+            <!-- CARD 5 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/lca.webp" alt="LCA">
+                    </div>
+                    <div class="card-content">
+                        <a href="fmi-sugere-gradual-de-titulos-como-lca.html" class="card-description">FMI sugere ‘eliminação gradual’ de títulos incentivados, como LCI e LCA.</a>
+                    </div>
+                </div>
+            </div>
 
+            <!-- CARD 6 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/caixa.jfif" alt="Caixa">
+                    </div>
+                    <div class="card-content">
+                        <a href="caixa-deve-usar-taxa-referencial-para-corrigir-valores-apreendidos-em-investigacoes.html" class="card-description">Caixa deve usar Taxa Referencial para corrigir valores apreendidos em investigações</a>
+                    </div>
+                </div>
+            </div>
 
+            <!-- CARD 7 -->
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="img/bitcoin.jfif" alt="Bitcoin">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fim do content -->
+    </section>
 </main>
+
 
 <footer>
   <a href="#">Termos de Uso</a>
   <a href="#">Política de Privacidade</a>
 </footer>
 <script src="script.js"></script>
-</body>
-</html>
+<script>
+
+function buscarCotacaoDolar() {
+  const url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) throw new Error("Erro na requisição");
+      return response.json();
+    })
+    .then(data => {
+      // A API retorna o objeto mapeado como USDBRL
+      const dadosDolar = data.USDBRL;
+      
+      // Captura os elementos do HTML
+      const txtValor = document.getElementById("dolar-valor");
+      const txtVariacao = document.getElementById("dolar-variacao");
+      const txtAtualizacao = document.getElementById("dolar-atualizacao");
+
+      if (txtValor && txtVariacao && txtAtualizacao) {
+        // 1. Atualiza o preço atual formatado com 2 casas decimais
+        const precoAtual = parseFloat(dadosDolar.bid).toFixed(2).replace('.', ',');
+        txtValor.textContent = precoAtual;
+
+        // 2. Trata a variação percentual do dia
+        const porcentagemVar = parseFloat(dadosDolar.pctChange);
+        txtVariacao.textContent = (porcentagemVar > 0 ? "+" : "") + porcentagemVar.toFixed(2) + "%";
+        
+        // Estiliza de acordo com a variação (Verde para alta, Vermelho para queda)
+        if (porcentagemVar >= 0) {
+          txtVariacao.style.backgroundColor = "rgba(46, 204, 113, 0.15)";
+          txtVariacao.style.color = "#27ae60";
+        } else {
+          txtVariacao.style.backgroundColor = "rgba(231, 76, 60, 0.15)";
+          txtVariacao.style.color = "#c0392b";
+        }
+
+        // 3. Formata a data e hora do último registro da API
+        const dataAPI = new Date(dadosDolar.create_date);
+        const horaFormatada = dataAPI.toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
+        const dataFormatada = dataAPI.toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit' });
+        txtAtualizacao.textContent = `${dataFormatada} às ${horaFormatada}`;
+      }
+    })
+    .catch(error => {
+      console.error("Falha ao sincronizar cotação:", error);
+      const txtVariacao = document.getElementById("dolar-variacao");
+      if (txtVariacao) txtVariacao.textContent = "Erro de conexão";
+    });
+}
+
+// Inicializa a busca assim que o script carregar
+buscarCotacaoDolar();
+
+// Executa uma nova requisição a cada 30 segundos de forma assíncrona
+setInterval(buscarCotacaoDolar, 30000);
+
+
+  </script>
