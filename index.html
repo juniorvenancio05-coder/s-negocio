@@ -91,6 +91,22 @@
 </header>
 
 <main>
+
+<!-- Mudado para <form> com o ID correto que o JavaScript monitora -->
+<div class="dolar-widget" style="max-width: 300px; margin: 20px auto; padding: 15px; background: #fdfdfd; border: 1px solid #e1e1e1; border-radius: 8px; text-align: center; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+  <h4 style="margin: 0 0 10px 0; color: #555; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Cotação do Dólar Comercial</h4>
+  <div style="font-size: 2rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px;">
+    R$ <span id="dolar-valor">0.00</span>
+  </div>
+  <div id="dolar-variacao" style="font-size: 0.85rem; font-weight: 600; display: inline-block; padding: 3px 8px; border-radius: 4px;">
+    Carregando...
+  </div>
+  <div style="font-size: 0.75rem; color: #999; margin-top: 10px;">
+    Atualizado em: <span id="dolar-atualizacao">-</span>
+  </div>
+</div>
+
+
 <section class="facilities">
   <h1>Economia em primeiro</h1>
   <p>Descrição da empresa e seus serviços</p>
@@ -150,7 +166,7 @@
 <div class="hero-content">
   <!-- Substituído o <li> por um link comum ou título -->
   <img src="img/cae.jfif" class="hero-link">CAE do Senado vai ouvir presidente do BRB sobre negociações com o Banco Master</img>
-  <a href="cae-senado-vai-ouvir-presidente-brb.html" class="btn">Saiba Mais</a>
+  <a href="cae-do-senado-vai-ouvir-presidente-brb.html" class="btn">Saiba Mais</a>
 </div>
 <div class="hero-content">
   <!-- Substituído o <li> por um link comum ou título -->
@@ -320,5 +336,62 @@
   <a href="#">Política de Privacidade</a>
 </footer>
 <script src="script.js"></script>
-</body>
-</html>
+<script>
+
+function buscarCotacaoDolar() {
+  const url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) throw new Error("Erro na requisição");
+      return response.json();
+    })
+    .then(data => {
+      // A API retorna o objeto mapeado como USDBRL
+      const dadosDolar = data.USDBRL;
+      
+      // Captura os elementos do HTML
+      const txtValor = document.getElementById("dolar-valor");
+      const txtVariacao = document.getElementById("dolar-variacao");
+      const txtAtualizacao = document.getElementById("dolar-atualizacao");
+
+      if (txtValor && txtVariacao && txtAtualizacao) {
+        // 1. Atualiza o preço atual formatado com 2 casas decimais
+        const precoAtual = parseFloat(dadosDolar.bid).toFixed(2).replace('.', ',');
+        txtValor.textContent = precoAtual;
+
+        // 2. Trata a variação percentual do dia
+        const porcentagemVar = parseFloat(dadosDolar.pctChange);
+        txtVariacao.textContent = (porcentagemVar > 0 ? "+" : "") + porcentagemVar.toFixed(2) + "%";
+        
+        // Estiliza de acordo com a variação (Verde para alta, Vermelho para queda)
+        if (porcentagemVar >= 0) {
+          txtVariacao.style.backgroundColor = "rgba(46, 204, 113, 0.15)";
+          txtVariacao.style.color = "#27ae60";
+        } else {
+          txtVariacao.style.backgroundColor = "rgba(231, 76, 60, 0.15)";
+          txtVariacao.style.color = "#c0392b";
+        }
+
+        // 3. Formata a data e hora do último registro da API
+        const dataAPI = new Date(dadosDolar.create_date);
+        const horaFormatada = dataAPI.toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
+        const dataFormatada = dataAPI.toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit' });
+        txtAtualizacao.textContent = `${dataFormatada} às ${horaFormatada}`;
+      }
+    })
+    .catch(error => {
+      console.error("Falha ao sincronizar cotação:", error);
+      const txtVariacao = document.getElementById("dolar-variacao");
+      if (txtVariacao) txtVariacao.textContent = "Erro de conexão";
+    });
+}
+
+// Inicializa a busca assim que o script carregar
+buscarCotacaoDolar();
+
+// Executa uma nova requisição a cada 30 segundos de forma assíncrona
+setInterval(buscarCotacaoDolar, 30000);
+
+
+  </script>
