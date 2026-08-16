@@ -519,7 +519,7 @@ footer a:hover {
 @media (min-width: 768px) {
   .carrosel {
     width: 150px;
-    height: 150px;
+    height: 180px;
   }
   .carrosel span {
     transform: rotateY(calc(var(--i) * 60deg)) translateZ(250px); /* Afasta mais as imagens em telas grandes */
