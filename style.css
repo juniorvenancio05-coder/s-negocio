@@ -506,3 +506,12 @@ footer a:hover {
 .carrosel span:hover img {
   transform: translateY(-20px);
 }
+@media (min-width: 780px){
+   .carrosel{
+      width: 150px;
+      height: 150px;
+   }
+   .carrosel span{
+      transfomr: rotateY(calc(var(--i) *60deg)) translateZ(250px);
+   }
+}
