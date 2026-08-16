@@ -464,7 +464,7 @@ footer a:hover {
  
   overflow: hidden; /* Evita barras de rolagem indesejadas */
    /* 1. MUDAR A COR: Substitua pelo nome, HEX ou RGB da cor que desejar */
-  background-color: #34495e; 
+ 
   
   /* 2. DIMINUIR O FUNDO: Mude de '100vh' (tela cheia) para um valor fixo */
   height: 400px; 
