@@ -388,13 +388,15 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: center; /* Garante a centralização dos cards na tela */
     width: 100%;
+    padding: 15px; /* Evita que os cards encostem nas bordas físicas do celular */
 }
 
 .content-wrapper {
     flex: 1 1 240px;
     max-width: 280px;
+    width: 100%; /* Força o preenchimento correto em telas pequenas */
 }
 
 .card {
@@ -412,6 +414,7 @@ main {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    display: block; /* Remove pequenos espaçamentos fantasmas abaixo da imagem */
 }
 
 .card-content {
@@ -428,6 +431,13 @@ main {
 
 .card-description:hover {
     color: #00bcd4;
+}
+
+/* 📱 Ajuste específico para celulares muito pequenos (opcional) */
+@media (max-width: 340px) {
+    .content-wrapper {
+        max-width: 100%; /* Faz o card se ajustar ao tamanho total da tela do celular */
+    }
 }
 
 /* ==========================================
