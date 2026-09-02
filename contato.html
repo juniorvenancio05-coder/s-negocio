@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Sonegocio</title>
+
+    <meta name="description" content="Entre em contato com a equipe do Sonegocio para dúvidas, sugestões, parcerias ou anúncios.">
+    <meta name="author" content="Junior Venâncio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://roledenoticias.com">
+    <meta name="keywords" content="sonegocio, contato, falar conosco, anuncio, finanças, economia">
+    <meta name="google-site-verification" content="yorUtUewLvVmPJCs6dZgpym4zXe3JSIQrBjhuJblyow" />
+
+    <!-- Open Graph (Redes Sociais) -->
+    <meta property="og:title" content="Contato - Sonegocio">
+    <meta property="og:description" content="Entre em contato com a equipe do Sonegocio para dúvidas, sugestões, parcerias ou anúncios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roledenoticias.com">
+    <meta property="og:image" content="https://roledenoticias.com">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:image" content="logo1.jpg">
+
+    <!-- CSS LOCAL -->
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <!-- Ícones e Fontes Externas -->
+    <link rel="stylesheet" href="https://unpkg.com">
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    <!-- Scripts e Bibliotecas -->
+    <script src="https://jquery.com"></script>
+    <script async src="https://tiktok.com"></script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
+
+    <!-- Dados Estruturados SEO - ContactPage conforme Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Sonegocio",
+        "url": "https://roledenoticias.com",
+        "logo": "https://roledenoticias.com"
+      }
+    }
+    </script>
+</head>
+
+<body>
+  
+<header>
+  <nav class="main">
+    <!-- Menu Horizontal -->
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- NOVO MENU DROPDOWN -->
+    <div class="menu-dropdown">
+      <i class="bx bx-menu menu-icon-toggle" id="botaoMenu"></i> 
+      <ul class="dropdown-paginas" id="listaPaginas">
+        <li><a href="investmento.html"><i class="bx bx-home"></i> Cálculo de investimento</a></li>
+        <li><a href="lancamento.html"><i class="bx bx-music"></i> Calculadora</a></li>
+        <li><a href="rock.html"><i class="bx bx-guitar"></i> Financiamento</a></li>
+        <li><a href="serie.html"><i class="bx bx-tv"></i> Dólar</a></li>
+        <li><a href="cinema_int.html"><i class="bx bx-movie-play"></i> LCA</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Seção Principal "Contato" -->
+  <section class="container" style="padding: 40px 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif; color: #333;">
+    <h1 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px; text-align: center;">Fale Conosco</h1>
+    <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1.1rem;">Tem alguma dúvida, sugestão ou proposta comercial? Envie uma mensagem para nossa equipe.</p>
+    
+    <div class="faci-container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; align-items: flex-start;">
+      
+      <!-- Formulário de Mensagem -->
+      <form action="#" method="POST" style="flex: 1 1 450px; background: #fdfdfd; border: 1px solid #e1e1e1; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        
+        <div style="margin-bottom: 15px;">
+          <label for="nome" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">E-mail</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label for="assunto" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">Assunto</label>
+          <select id="assunto" name="assunto" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; background: #fff;">
+            <option value="duvidas">Dúvidas Gerais</option>
+            <option value="sugestoes">Sugestão de Conteúdo</option>
+            <option value="comercial">Anúncios e Parcerias</option>
+            <option value="suporte">Problemas Técnicos</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label for="mensagem" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">Sua Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" style="background: #27ae60; color: #fff; border: none; padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; transition: background 0.2s;">
+          Enviar Mensagem
+        </button>
+      </form>
+
+      <!-- Informações Diretas de Contato / Redes Sociais -->
+      <div style="flex: 1 1 250px; background: #fff; padding: 25px; border: 1px solid #e1e1e1; border-radius: 8px;">
+        <h3 style="color: #2c3e50; margin-top: 0; margin-bottom: 20px; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Canais Diretos</h3>
+        
+        <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <i class="bx bx-envelope" style="font-size: 1.8rem; color: #2980b9;"></i>
+          <div>
+            <strong style="display: block; font-size: 0.85rem; color: #666;">Nosso E-mail</strong>
+            <span style="font-size: 0.95rem; word-break: break-all;">contato@sonegocio.com</span>
+          </div>
+        </div>
+
+        <h3 style="color: #2c3e50; margin-top: 30px; margin-bottom: 20px; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Siga-nos</h3>
+        <div style="display: flex; gap: 15px; font-size: 1.8rem;">
+          <a href="#" style="color: #3b5998;" title="Facebook"><i class="bx bxl-facebook-square"></i></a>
+          <a href="#" style="color: #e1306c;" title="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" style="color: #000000;" title="TikTok"><i class="bx bxl-tiktok"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <div class="linha"></div>
+</main>
+
+<footer style="text-align: center; padding: 20px; background: #2c3e50; color: #fff; font-family: sans-serif; margin-top: 40px;">
+  <p>© 2026 Sonegocio - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  // Script para o funcionamento do menu dropdown lateral
+  $(document).ready(function(){
+    $("#botaoMenu").click(function(){
+      $("#listaPaginas").slideToggle("fast");
+    });
+  });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Sonegocio</title>
+
+    <meta name="description" content="Entre em contato com a equipe do Sonegocio para dúvidas, sugestões, parcerias ou anúncios.">
+    <meta name="author" content="Junior Venâncio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://roledenoticias.com">
+    <meta name="keywords" content="sonegocio, contato, falar conosco, anuncio, finanças, economia">
+    <meta name="google-site-verification" content="yorUtUewLvVmPJCs6dZgpym4zXe3JSIQrBjhuJblyow" />
+
+    <!-- Open Graph (Redes Sociais) -->
+    <meta property="og:title" content="Contato - Sonegocio">
+    <meta property="og:description" content="Entre em contato com a equipe do Sonegocio para dúvidas, sugestões, parcerias ou anúncios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roledenoticias.com">
+    <meta property="og:image" content="https://roledenoticias.com">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:image" content="logo1.jpg">
+
+    <!-- CSS LOCAL -->
+    <link rel="stylesheet" href="style.css?v=1.1">
+
+    <!-- Ícones e Fontes Externas -->
+    <link rel="stylesheet" href="https://unpkg.com">
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    <!-- Scripts e Bibliotecas -->
+    <script src="https://jquery.com"></script>
+    <script async src="https://tiktok.com"></script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
+
+    <!-- Dados Estruturados SEO - ContactPage conforme Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Sonegocio",
+        "url": "https://roledenoticias.com",
+        "logo": "https://roledenoticias.com"
+      }
+    }
+    </script>
+</head>
+
+<body>
+  
+<header>
+  <nav class="main">
+    <!-- Menu Horizontal -->
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- NOVO MENU DROPDOWN -->
+    <div class="menu-dropdown">
+      <i class="bx bx-menu menu-icon-toggle" id="botaoMenu"></i> 
+      <ul class="dropdown-paginas" id="listaPaginas">
+        <li><a href="investmento.html"><i class="bx bx-home"></i> Cálculo de investimento</a></li>
+        <li><a href="lancamento.html"><i class="bx bx-music"></i> Calculadora</a></li>
+        <li><a href="rock.html"><i class="bx bx-guitar"></i> Financiamento</a></li>
+        <li><a href="serie.html"><i class="bx bx-tv"></i> Dólar</a></li>
+        <li><a href="cinema_int.html"><i class="bx bx-movie-play"></i> LCA</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Seção Principal "Contato" -->
+  <section class="container" style="padding: 40px 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif; color: #333;">
+    <h1 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px; text-align: center;">Fale Conosco</h1>
+    <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1.1rem;">Tem alguma dúvida, sugestão ou proposta comercial? Envie uma mensagem para nossa equipe.</p>
+    
+    <div class="faci-container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; align-items: flex-start;">
+      
+      <!-- Formulário de Mensagem -->
+      <form action="#" method="POST" style="flex: 1 1 450px; background: #fdfdfd; border: 1px solid #e1e1e1; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        
+        <div style="margin-bottom: 15px;">
+          <label for="nome" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">E-mail</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label for="assunto" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">Assunto</label>
+          <select id="assunto" name="assunto" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; background: #fff;">
+            <option value="duvidas">Dúvidas Gerais</option>
+            <option value="sugestoes">Sugestão de Conteúdo</option>
+            <option value="comercial">Anúncios e Parcerias</option>
+            <option value="suporte">Problemas Técnicos</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label for="mensagem" style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">Sua Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" style="background: #27ae60; color: #fff; border: none; padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; transition: background 0.2s;">
+          Enviar Mensagem
+        </button>
+      </form>
+
+      <!-- Informações Diretas de Contato / Redes Sociais -->
+      <div style="flex: 1 1 250px; background: #fff; padding: 25px; border: 1px solid #e1e1e1; border-radius: 8px;">
+        <h3 style="color: #2c3e50; margin-top: 0; margin-bottom: 20px; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Canais Diretos</h3>
+        
+        <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <i class="bx bx-envelope" style="font-size: 1.8rem; color: #2980b9;"></i>
+          <div>
+            <strong style="display: block; font-size: 0.85rem; color: #666;">Nosso E-mail</strong>
+            <span style="font-size: 0.95rem; word-break: break-all;">contato@sonegocio.com</span>
+          </div>
+        </div>
+
+        <h3 style="color: #2c3e50; margin-top: 30px; margin-bottom: 20px; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Siga-nos</h3>
+        <div style="display: flex; gap: 15px; font-size: 1.8rem;">
+          <a href="#" style="color: #3b5998;" title="Facebook"><i class="bx bxl-facebook-square"></i></a>
+          <a href="#" style="color: #e1306c;" title="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" style="color: #000000;" title="TikTok"><i class="bx bxl-tiktok"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <div class="linha"></div>
+</main>
+
+<footer style="text-align: center; padding: 20px; background: #2c3e50; color: #fff; font-family: sans-serif; margin-top: 40px;">
+  <p>© 2026 Sonegocio - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  // Script para o funcionamento do menu dropdown lateral
+  $(document).ready(function(){
+    $("#botaoMenu").click(function(){
+      $("#listaPaginas").slideToggle("fast");
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  
 <head>
- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negocios</title>
+    <title>Negócios</title>
 
     <meta name="description" content="Site de cultura pop com filmes, música e notícias diversas.">
     <meta name="author" content="Junior Venâncio">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://roledenoticias.com/pop.html">
+    <link class="canonical" href="https://roledenoticias.com">
     <meta name="keywords" content="musica, filmes, series, lancamentos">
-    <meta name="google-site-verification" content="yorUtUewLvVmPJCs6dZgpym4zXe3JSIQrBjhuJblyow" />
+    <meta name="google-site-verification" content="yorUtUewLvVmPJCs6dZgpym4zXe3JSIQrBjhuJblyow">
 
     <!-- Open Graph (Redes Sociais) -->
     <meta property="og:title" content="Rolê de Notícias">
     <meta property="og:description" content="Site de cultura pop com filmes, música e notícias diversas.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://roledenoticias.com/pop.html">
-    <meta property="og:image" content="https://roledenoticias.com/img/logo1.jpg">
+    <meta property="og:url" content="https://roledenoticias.com">
+    <meta property="og:image" content="https://roledenoticias.com">
     <meta property="og:locale" content="pt_BR">
     <meta name="twitter:image" content="logo1.jpg">
 
-    <!-- CSS LOCAL (Carrega o fundo que você configurou no seu computador) -->
+    <!-- CSS LOCAL -->
     <link rel="stylesheet" href="style.css?v=1.1">
 
-
     <!-- Ícones e Fontes Externas -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com">
+    <link rel="stylesheet" href="https://cloudflare.com">
 
     <!-- Scripts e Bibliotecas -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script src="https://jquery.com"></script>
+    <script async src="https://tiktok.com"></script>
     
-    <!-- Google AdSense (Corrigido) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9807965483160337" crossorigin="anonymous"></script>
-
-    <!-- Google Tag Manager -->
-    
-    <!-- End Google Tag Manager -->
+    <!-- Google AdSense -->
+    <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
 
     <!-- Dados Estruturados SEO -->
     <script type="application/ld+json">
@@ -56,147 +49,123 @@
     }
     </script>
 </head>
-
-
 <body>
-  
 
-   <header>
- <nav class="main">
-  <!-- Menu Horizontal Antigo Corrigido -->
-  <div class="menu">
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </div> <!-- Fechamento correto da div class="menu" -->
+<header>
+    <nav class="main">
+        <!-- Menu Horizontal -->
+        <div class="menu">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
 
-  <!-- NOVO MENU DROPDOWN (Fica isolado e protegido de interferências) -->
-  <div class="menu-dropdown">
-    <!-- Ícone do Menu -->
-    <i class="bx bx-menu menu-icon-toggle" id="botaoMenu"></i> 
-    
-    <!-- Lista de páginas flutuante -->
-    <ul class="dropdown-paginas" id="listaPaginas">
-      <li><a href="investmento.html"><i class="bx bx-home"></i> Calculo de investimento</a></li>
-      <li><a href="lancamento.html"><i class="bx bx-music"></i> calculadora</a></li>
-      <li><a href="rock.html"><i class="bx bx-guitar"></i> financiamento</a></li>
-      <li><a href="serie.html"><i class="bx bx-tv"></i> dolar</a></li>
-      <li><a href="cinema_int.html"><i class="bx bx-movie-play"></i> Lca</a></li>
-    </ul>
-  </div>
-</nav>
-
+        <!-- NOVO MENU DROPDOWN -->
+        <div class="menu-dropdown">
+            <i class="bx bx-menu menu-icon-toggle" id="botaoMenu"></i> 
+            <ul class="dropdown-paginas" id="listaPaginas">
+                <li><a href="investmento.html"><i class="bx bx-home"></i> Cálculo de investimento</a></li>
+                <li><a href="lancamento.html"><i class="bx bx-music"></i> calculadora</a></li>
+                <li><a href="rock.html"><i class="bx bx-guitar"></i> financiamento</a></li>
+                <li><a href="serie.html"><i class="bx bx-tv"></i> dolar</a></li>
+                <li><a href="cinema_int.html"><i class="bx bx-movie-play"></i> Lca</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
 <main>
+    <section class="facilities">
+        <h1>Economia em primeiro</h1>
+        <p>Descrição da empresa e seus serviços</p>
+        
+        <div class="faci-container">
+            <div class="newfaci">
+                <img src="img/dinheiro.avif" alt="Imagem 1">
+                <h3>Serviço 1</h3>
+                <a href="dinheiro.html">Dólar em queda impulsiona moedas da América Latina; peso colombiano lidera valorização</a>
+            </div>
 
-<!-- Mudado para <form> com o ID correto que o JavaScript monitora -->
-<div class="dolar-widget" style="max-width: 300px; margin: 20px auto; padding: 15px; background: #fdfdfd; border: 1px solid #e1e1e1; border-radius: 8px; text-align: center; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-  <h4 style="margin: 0 0 10px 0; color: #555; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Cotação do Dólar Comercial</h4>
-  <div style="font-size: 2rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px;">
-    R$ <span id="dolar-valor">0.00</span>
-  </div>
-  <div id="dolar-variacao" style="font-size: 0.85rem; font-weight: 600; display: inline-block; padding: 3px 8px; border-radius: 4px;">
-    Carregando...
-  </div>
-  <div style="font-size: 0.75rem; color: #999; margin-top: 10px;">
-    Atualizado em: <span id="dolar-atualizacao">-</span>
-  </div>
-</div>
+            <div class="newfaci">
+                <img src="img/energia.avif" alt="Imagem 2">
+                <h3>Economia</h3>
+                <a href="energialimpa-rn.html">Energia limpa precisa virar indústria para alavancar mais empregos no RN</a>
+            </div>
 
+            <div class="newfaci">
+                <img src="img/vivara.avif" alt="Imagem 3">
+                <h3>Serviço 3</h3>
+                <a href="vivara.html">Vivara deixa de comprar ouro, usa estoque acumulado e alcança margem recorde, diz CFO</a>
+            </div>
+        </div>
+    </section>
 
-<section class="facilities">
-  <h1>Economia em primeiro</h1>
-  <p>Descrição da empresa e seus serviços</p>
-  
-  <!-- Container pai que vai alinhar as 3 divs lado a lado -->
-  <div class="faci-container">
+    <div class="linha"></div>
+
+    <section class="container">
+        <h1>Bem-vindo à Nossa Empresa</h1>
+        <p>Descrição da empresa e seus serviços</p>
+    </section>
     
-    <div class="newfaci">
-      <img src="img/dinheiro.avif" alt="Imagem 1">
-      <h3>Dólar</h3>
-      <a href="dinheiro.html">Dólar em queda impulsiona moedas da América Latina; peso colombiano lidera valorização</a>
+    <div class="hero">
+        <div class="hero-content">
+            <img src="img/mercado livre.jfif" alt="Mercado Livre" class="hero-img">
+            <h3 class="hero-title">Mercado Livre Tem Lucro Acima da Estimativa</h3>
+            <a href="Mercado-Livre-Tem-Lucro-Acima-da-Estimativa.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/gerdau.jfif" alt="Gerdau" class="hero-img">
+            <h3 class="hero-title">Gerdau suspende investimento no Peru enquanto tenta bloquear projeto siderúrgico chinês</h3>
+            <a href="Gerdau-suspende-investimento-no-Peru-enquanto-tenta-bloquear-projeto-siderurgico-chines.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/images (7).jfif" alt="Selic" class="hero-img">
+            <h3 class="hero-title">O impacto do anúncio da redução da Selic no mercado imobiliário</h3>
+            <a href="impatco-da-reducao-da-selic.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/nubank.jfif" alt="Nubank" class="hero-img">
+            <h3 class="hero-title">Novo CFO reveals limite para aposta do Nubank nos EUA e vê México com potencial do Brasil</h3>
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/cae.jfif" alt="BRB" class="hero-img">
+            <h3 class="hero-title">CAE do Senado vai ouvir presidente do BRB sobre negociações com o Banco Master</h3>
+            <a href="cae-senado-vai-ouvir-presidente-brb.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/etf.jfif" alt="JPMorgan" class="hero-img">
+            <h3 class="hero-title">JPMorgan lança ETF de gestão ativa com foco em tecnologia dos EUA na B3</h3>
+            <a href="jpmorgan-lanca-etf-de-gestão.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/bitcoin.jfif" alt="Bitcoin" class="hero-img">
+            <h3 class="hero-title">Bitcoin recua abaixo de US$ 65.000 com entradas em ETFs e preocupações com fork</h3>
+            <a href="bitcoin-recua_abaixo_de_us_65_000_com_entradas_em_etfs_e_preocupacoes_com_fork.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/petrobras.webp" alt="Petrobras" class="hero-img">
+            <h3 class="hero-title">Mudança regulatória no gás pode levar Petrobras a rever projetos, diz Magda</h3>
+            <a href="mudanca-regulatória-no-gás-pode-levar-petrobras-a-rever-projetos-diz-magda.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <div class="hero-content">
+            <img src="img/ca.webp" alt="Agronegócio Brasil" class="hero-img">
+            <h3 class="hero-title">Brasil caminha para ultrapassar os EUA e se tornar o maior exportador agrícola do planeta</h3>
+            <a href="brasil-ultrapassa-eua.html" class="btn">Saiba Mais</a>
+        </div>
     </div>
 
-    <div class="newfaci">
-      <img src="img/energia.avif" alt="Imagem 2">
-      <h3>Economia</h3>
-      <a href="energialimpa-rn.html">Energia limpa precisa virar indústria para alavancar mais empregos no RN</a>
-    </div>
-
-    <div class="newfaci">
-      <img src="img/vivara.avif" alt="Imagem 3">
-      <h3>Negocios</h3>
-      <a href="vivara.html">Vivara deixa de comprar ouro, usa estoque acumulado e alcança margem recorde, diz CFO</a>
-    </div>
-
-  </div> <!-- Fim do faci-container -->
-</section>
-<div class="linha"></div>
-
-  <section class="container">
-    <h1>Bem-vindo à Nossa Empresa</h1>
-    <p>Descrição da empresa e seus serviços</p>
-  </section>
-  
-  <div class="hero">
-   <div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/mercado livre.jfif" class="hero-link">Mercado Livre Tem Lucro Acima da Estimativa</img>
-  <a href="Mercado-Livre-Tem-Lucro-Acima-da-Estimativa.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/gerdau.jfif" class="hero-link">Gerdau suspende investimento no Peru enquanto tenta bloquear projeto siderúrgico chinês</img>
-  <a href="Gerdau-suspende-investimento-no-Peru.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/images (7).jfif" class="hero-link">O impacto do anúncio da redução da Selic no mercado imobiliário 
-</img>
-  <a href="impacto-da-reducao-da-selic.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/nubank.jfif" class="hero-link">Novo CFO revela limite para aposta do Nubank nos EUA e vê México com potencial do Brasil</img>
-  <a href="novo-cfo-revela-limite-para-aposta-nubank.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/cae.jfif" class="hero-link">CAE do Senado vai ouvir presidente do BRB sobre negociações com o Banco Master</img>
-  <a href="cae-do-senado-vai-ouvir-presidente-brb.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/etf.jfif" class="hero-link">JPMorgan lança ETF de gestão ativa com foco em tecnologia dos EUA na B3</img>
-  <a href="jpmorgan-lanca-etf-de-gestão.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/bitcoin.jfif" class="hero-link">Bitcoin recua abaixo de US$ 65.000 com entradas em ETFs e preocupações com fork</img>
-  <a href="bitcoin-recua_abaixo_de_us_65_000_com_entradas_em_etfs_e_preocupacoes_com_fork.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/petrobras.webp" class="hero-link">Mudança regulatória no gás pode levar Petrobras a rever projetos, diz Magda</img>
-  <a href="mudanca-regulatória-no-gás-pode-levar-petrobras-a-rever-projetos-diz-magda.html" class="btn">Saiba Mais</a>
-</div>
-<div class="hero-content">
-  <!-- Substituído o <li> por um link comum ou título -->
-  <img src="img/ca.webp" class="hero-link">Brasil caminha para ultrapassar os EUA e se tornar o maior exportador agrícola do planeta</img>
-  <a href="brasil-ultrapassa-eua.html" class="btn">Saiba Mais</a>
-</div>
-</div>
-
-<div class="content">
-  
-  <!-- CARD 1 -->
- 
-
-  <section class="secao-posts">
-     <section class="secao-posts">
+    <section class="secao-posts">
         <h2>Música Pop</h2>
         <div class="linha"></div>
 
@@ -225,184 +194,8 @@
             <a class="prev" onclick="plusSlides(-1)">❮</a>
             <a class="next" onclick="plusSlides(1)">❯</a>
         </div>
-
-        <!-- PONTOS INDICADORES DO SLIDESHOW -->
-        <div class="dots">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
     </section>
-
-    <section class="secao-posts">
-        <h2>Categorias</h2>
-        <div class="linha"></div>
-        
-        <!-- CONTAINER PAI DOS CARDS -->
-        <div class="content">
-
-            <!-- CARD 1 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/claro.webp" alt="Claro">
-                    </div>
-                    <div class="card-content">
-                        <a href="Claro-compra-provedora-de-banda-larga.html" class="card-description">Claro compra provedora de banda larga Desktop em negócio de R$ 4 bilhões</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/dinheiro.avif" alt="Ibovespa">
-                    </div>
-                    <div class="card-content">
-                        <a href="ibovespa-fecha-em-queda.html" class="card-description">Ibovespa fecha em queda com balanços em foco; dólar cai</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/area.webp" alt="Ozempic">
-                    </div>
-                    <div class="card-content">
-                        <a href="efeito-ozempic-pode-gerar-economia.html" class="card-description">Estudo aponta que "efeito Ozempic" pode gerar economia de US$ 500 milhões para companhias aéreas</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/selic.webp" alt="Selic">
-                    </div>
-                    <div class="card-content">
-                        <a href="atividade-pode-abrir-espaço-pra-selic.html" class="card-description">Atividade mais fraca pode abrir espaço para Selic cair a 13,25%, diz Bradesco</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 5 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/lca.webp" alt="LCA">
-                    </div>
-                    <div class="card-content">
-                        <a href="fmi-sugere-gradual-de-titulos-como-lca.html" class="card-description">FMI sugere ‘eliminação gradual’ de títulos incentivados, como LCI e LCA.</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 6 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/caixa.jfif" alt="Caixa">
-                    </div>
-                    <div class="card-content">
-                        <a href="caixa-deve-usar-taxa-referencial-para-corrigir-valores-apreendidos-em-investigacoes.html" class="card-description">Caixa deve usar Taxa Referencial para corrigir valores apreendidos em investigações</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 7 -->
-            <div class="content-wrapper">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <img src="img/bitcoin.jfif" alt="Bitcoin">
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div> <!-- Fim do content -->
-    </section>
-    <div class="container-carrossel">
-  <div class="carrosel">
-    <span style="--i:1;"><img src="img/area.webp" alt="1"></span>
-    <span style="--i:2;"><img src="img/ca.webp" alt="2"></span>
-    <span style="--i:3;"><img src="img/claro.webp" alt="3"></span>
-    <span style="--i:4;"><img src="img/lca.webp" alt="4"></span>
-    <span style="--i:5;"><img src="img/selic.webp" alt="5"></span>
-    <span style="--i:6;"><img src="img/bitcoin.jfif" alt="6"></span>
-  </div>
-</div>
-
 </main>
 
-
-<footer>
-  <a href="#">Termos de Uso</a>
-  <a href="#">Política de Privacidade</a>
-</footer>
-<script src="script.js"></script>
-<script>
-
-function buscarCotacaoDolar() {
-  const url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
-
-  fetch(url)
-    .then(response => {
-      if (!response.ok) throw new Error("Erro na requisição");
-      return response.json();
-    })
-    .then(data => {
-      // A API retorna o objeto mapeado como USDBRL
-      const dadosDolar = data.USDBRL;
-      
-      // Captura os elementos do HTML
-      const txtValor = document.getElementById("dolar-valor");
-      const txtVariacao = document.getElementById("dolar-variacao");
-      const txtAtualizacao = document.getElementById("dolar-atualizacao");
-
-      if (txtValor && txtVariacao && txtAtualizacao) {
-        // 1. Atualiza o preço atual formatado com 2 casas decimais
-        const precoAtual = parseFloat(dadosDolar.bid).toFixed(2).replace('.', ',');
-        txtValor.textContent = precoAtual;
-
-        // 2. Trata a variação percentual do dia
-        const porcentagemVar = parseFloat(dadosDolar.pctChange);
-        txtVariacao.textContent = (porcentagemVar > 0 ? "+" : "") + porcentagemVar.toFixed(2) + "%";
-        
-        // Estiliza de acordo com a variação (Verde para alta, Vermelho para queda)
-        if (porcentagemVar >= 0) {
-          txtVariacao.style.backgroundColor = "rgba(46, 204, 113, 0.15)";
-          txtVariacao.style.color = "#27ae60";
-        } else {
-          txtVariacao.style.backgroundColor = "rgba(231, 76, 60, 0.15)";
-          txtVariacao.style.color = "#c0392b";
-        }
-
-        // 3. Formata a data e hora do último registro da API
-        const dataAPI = new Date(dadosDolar.create_date);
-        const horaFormatada = dataAPI.toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
-        const dataFormatada = dataAPI.toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit' });
-        txtAtualizacao.textContent = `${dataFormatada} às ${horaFormatada}`;
-      }
-    })
-    .catch(error => {
-      console.error("Falha ao sincronizar cotação:", error);
-      const txtVariacao = document.getElementById("dolar-variacao");
-      if (txtVariacao) txtVariacao.textContent = "Erro de conexão";
-    });
-}
-
-// Inicializa a busca assim que o script carregar
-buscarCotacaoDolar();
-
-// Executa uma nova requisição a cada 30 segundos de forma assíncrona
-setInterval(buscarCotacaoDolar, 30000);
-
-
-  </script>
+</body>
+</html>
